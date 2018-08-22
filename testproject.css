@@ -1,0 +1,382 @@
+:root {
+  --background: #f9f9f9;
+  --darkblue: #003479;
+  --lightblue: #0d3e80;
+  --darkgreen: #39823c;
+  --lightgreen: #dff0d8;
+  --red: #d43045;
+}
+
+@font-face {
+    font-family: VisbyCF-Bold;
+    src: url("assets/fonts/VisbyCF-Bold.eot"),
+    url("assets/fonts/VisbyCF-Bold.svg"),
+    url("assets/fonts/VisbyCF-Bold.ttf"),
+    url("assets/fonts/VisbyCF-Bold.woff"),
+    url("assets/fonts/VisbyCF-Bold.woff2");
+}
+
+@font-face {
+    font-family: VisbyCF-Heavy;
+    src: url("assets/fonts/VisbyCF-Heavy.eot"),
+    url("assets/fonts/VisbyCF-Heavy.svg"),
+    url("assets/fonts/VisbyCF-Heavy.ttf"),
+    url("assets/fonts/VisbyCF-Heavy.woff"),
+    url("assets/fonts/VisbyCF-Heavy.woff2");
+}
+
+/* global */
+
+body {
+  margin: 0;
+  background-color: var(--background);
+  font-family: VisbyCF-Bold;
+  font-size: 13px;
+}
+
+button {
+  cursor: pointer;
+}
+
+a:link, a:visited {
+  color: var(--lightblue);
+}
+
+.white-text {
+  color: #fff;
+}
+
+/* header */
+
+#upper-header {
+  border: 1px solid red;
+  display: flex;
+}
+
+#upper-header-right {
+  border: 1px solid blue;
+  flex-grow: 1;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+#upper-header-right i, #upper-header-right p {
+  float: left;
+  margin: 10px;
+}
+
+#logout-btn {
+  background-color: var(--red);
+  color: #fff;
+  width: 150px;
+  height: 50px;
+}
+
+#account-name, #basket {
+  border: 1px solid green;
+}
+
+#lower-header {
+  background-image:url("assets/img/hero-background.jpg");
+  background-repeat: repeat-x;
+}
+
+#profile-details {
+  border: 1px solid purple;
+  text-align: center;
+}
+
+#profile-img-container {
+  border: 1px solid purple;
+}
+
+#profile-img {
+  background-color: #000;
+  border: 2px solid #fff;
+  text-align: center;
+  width: 122px;
+  height: 122px;
+  line-height: 122px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+#edit-profile-img-btn, #update-detail-btn {
+  background-color: var(--darkblue);
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 10px 50px;
+  margin: auto;
+}
+
+#edit-profile-img-btn {
+  margin-bottom: 10px;
+}
+
+#update-detail-btn {
+  background-color: var(--lightblue);
+  display: block;
+  margin-top: 10px;
+}
+
+#contacts-container {
+  display: flex;
+}
+
+#email-details, #phone-details {
+  border: 1px solid orange;
+  flex: 1;
+  overflow-wrap: break-word; /* prevent overlap */
+}
+
+/* accordion menu */
+
+header nav {
+  background-color: #fff;
+  border: 1px solid orange;
+}
+
+.cd-accordion-menu {
+  list-style-type: none;
+  padding: 0px;
+}
+
+.cd-accordion-menu input[type=checkbox] {
+  /* hides checkbox, label handles check event instead */
+  position: absolute;
+  opacity: 0;
+}
+
+.cd-accordion-menu label {
+  font-size: 15px;
+}
+
+.cd-accordion-menu label, .cd-accordion-menu a {
+  position: relative;
+  display: block;
+  padding: 5px;
+}
+
+.cd-accordion-menu ul {
+  /* by default hide all sub menus */
+  display: none;
+  padding-left: 30px;
+  list-style-type: none;
+}
+
+.cd-accordion-menu input[type=checkbox]:checked + label + ul,
+.cd-accordion-menu input[type=checkbox]:checked + label:nth-of-type(n) + ul {
+  /* use label:nth-of-type(n) to fix a bug on safari (<= 8.0.8) with multiple adjacent-sibling selectors*/
+  /* show children when item is checked */
+  display: block;
+}
+
+/* main */
+main {
+  border: 1px solid blue
+}
+
+/* run details */
+.run-details-container {
+  border: 1px solid red;
+  text-align: center;
+}
+
+.countdown {
+  color: #fff;
+  text-align: center;
+  background-image:url("assets/img/hero-background.jpg");
+  width: 120px;
+  height: 120px;
+  margin: auto;
+}
+
+.run-details h2 {
+  font-size: 15px;
+}
+
+.run-details-btn {
+  background-color: var(--darkgreen);
+  color: #fff;
+  width: 150px;
+  height: 50px;
+}
+
+.event-info {
+  background-color: var(--lightgreen);
+  border: 2px solid var(--darkgreen);
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.event-info p {
+  margin: 0px;
+}
+
+/* store */
+#store {
+  border: 1px solid orange;
+  margin-top: 20px;
+  background-color: #fff;
+  text-align: center;
+}
+
+.store-item {
+  border: 1px solid green;
+  padding-bottom: 10px;
+}
+
+.store-img {
+  width: 200px;
+  heihght: 200px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+/* footer */
+
+footer {
+  background-color: var(--darkblue);
+}
+
+/* fullsize screen */
+
+@media screen and (min-width: 900px) {
+
+  /* header */
+
+  #upper-header {
+    height: 100px;
+  }
+
+  #lower-header {
+    height: 150px;
+    padding-top: 25px;
+    box-sizing: border-box;
+  }
+
+  header nav {
+    width: 250px;
+    margin-left: 50px;
+    margin-top: 25px;
+    float: left;
+  }
+
+  header nav ul { /*temp*/
+    margin: 0;
+  }
+
+  /* profile */
+  #profile-details {
+    float: left;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    width: 60%;
+    display: flex;
+    text-align: left;
+  }
+
+  #profile-img {
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+  }
+
+  #edit-profile-img-btn {
+    width: 100%;
+  }
+
+  #profile-detail-container {
+    margin-left: 20px;
+    margin-top: 102px;
+    width: 100%;
+  }
+
+  #update-detail-btn {
+    float: right;
+    margin-top: -11px; /* shift to bottom of header */
+  }
+
+  /* main body */
+  main {
+    width: 60%;
+    margin-left: 350px;
+  }
+
+  /* run details */
+  .run-details-container {
+    margin-top: 10px;
+    display: flex;
+    text-align: left;
+  }
+
+  .countdown {
+    width: 150px;
+    height: 150px;
+    margin: 0px;
+    flex: none; /* don't shrink */
+  }
+
+  .run-details {
+    padding: 0px 10px;
+    flex: 1;
+  }
+
+  .run-details h2 {
+    font-size: 13px;
+    margin-top: 0px;
+  }
+
+  .info-btn-container {
+    border: 1px solid orange;
+    display: flex;
+    align-items: center;
+  }
+
+  .event-info {
+    max-width: 400px;
+    margin: 0px 10px 0px 0px;
+  }
+
+  .run-details-btn {
+    margin-left: auto;
+    flex: none;
+  }
+
+  /* store */
+  #store {
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+  }
+
+  .store-item {
+    flex: 1;
+    max-width: 250px;
+    display: flex; /* bottom align order form */
+    flex-direction: column;
+  }
+
+  .store-img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  /*need to align order forms independent of item desc size */
+  .price-form {
+    border: 1px solid orange;
+    margin-top: auto;
+  }
+
+  /* footer */
+
+  footer {
+    margin-top: 20px;
+    padding: 20px;
+    border-bottom: 15px solid var(--lightblue);
+  }
+
+}
