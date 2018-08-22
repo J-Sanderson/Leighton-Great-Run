@@ -17,12 +17,12 @@
         <div id="account-name">
           <i class="far fa-user"></i>
           <p>Hello, Steve<br />
-          Your account</p>
+          <span class="heavy">Your account</span></p>
         </div>
         <div id="basket">
           <i class="fas fa-shopping-bag"></i>
-          <p>£0<br />
-          Your basket</p>
+          <p>&pound;0<br />
+          <span class="heavy">Your basket</span></p>
         </div>
         <button id="logout-btn">
           Logout
@@ -111,17 +111,17 @@
           <button id="update-detail-btn">
             Update details
           </button>
-          <p>Billing address:</p>
-          <p>Chase House, 4 Mandarin Road, Houghton-Le-Spring,
+          <p><span class="grey-text heavy">Billing address:</span><br />
+            Chase House, 4 Mandarin Road, Houghton-Le-Spring,
             DH4 5RA (HARDCODED)</p>
           <div id="contacts-container">
             <div id="email-details">
-              <p>Email address:</p>
-              <p>steve.morland@leighton.com</p>
+              <p><span class="grey-text heavy">Email address:</span><br />
+              steve.morland@leighton.com</p>
             </div>
             <div id="phone-details">
-              <p>Contact number:</p>
-              <p>077712345678</p>
+              <p><span class="grey-text heavy">Contact number:</span><br />
+              077712345678</p>
             </div>
           </div>
         </div>
@@ -135,14 +135,16 @@
 
     <div class="run-details-container">
       <div class="countdown">
-        <p>37</p>
-        <p>DAYS<br>TO GO</p>
+        <p><span class="large-num">37</span><br />
+          DAYS<br />
+          TO GO
+        </p>
       </div>
       <div class="run-details">
         <h2>THE GREAT NORTH RUN 2018</h2>
-        <p>Distance: Half Marathon
-          Date: 10 Sep 2018
-          Location: Great North Run</p>
+        <p><span class="heavy">Distance:</span> Half Marathon
+          <span class="heavy">Date:</span> 10 Sep 2018
+          <span class="heavy">Location:</span> Great North Run</p>
         <p><a href="#">Set up just giving</a>&emsp;
            <a href="#">Choose a charity</a></p>
          <div class="info-btn-container">
@@ -155,14 +157,16 @@
 
     <div class="run-details-container">
       <div class="countdown">
-        <p>35</p>
-        <p>DAYS<br>TO GO</p>
+        <p><span class="large-num">35</span><br />
+          DAYS<br />
+          TO GO
+        </p>
       </div>
       <div class="run-details">
         <h2>SIMPLYHEALTH GREAT ABERDEEN FAMILY RUN</h2>
-        <p>Distance: 10 Miles
-          Date: 8 Sep 2018
-          Location: Great North Run</p>
+        <p><span class="heavy">Distance:</span> 10 Miles
+          <span class="heavy">Date:</span> 8 Sep 2018
+          <span class="heavy">Location:</span> Great North Run</p>
         <p><a href="#">Set up just giving</a>&emsp;
            <a href="#">Choose a charity</a></p>
           <div class="info-btn-container">
@@ -183,23 +187,26 @@
         <img src="assets/img/nike-shorts.jpg" class="store-img" />
         <p>NIKE WOMENS DRY MOD TEMPO SHORT EMB - TRUE BERRY</p>
         <div class="price-form">
-          <p>£22.50&emsp;<s>£25.00</s></p>
+          <p class="heavy">&pound;22.50&emsp;<s>&pound;25.00</s></p>
           <form>
-            <select>
-              <option value="none">Size</option>
-              <option value="small">Small</option>
-              <option value="medium">Medium</option>
-              <option value="large">Large</option>
-            </select>
-            <select>
-              <option value="none">Quantity</option>
-              <option value="one">1</option>
-              <option value="two">2</option>
-              <option value="three">3</option>
-              <option value="four">4</option>
-              <option value="five">5</option>
-            </select>
-            <br />
+            <div class="select-style">
+              <select>
+                <option value="none">Size</option>
+                  <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+              </select>
+            </div>
+            <div class="select-style">
+              <select>
+                <option value="none">Quantity</option>
+                <option value="one">1</option>
+                <option value="two">2</option>
+                <option value="three">3</option>
+                <option value="four">4</option>
+                <option value="five">5</option>
+              </select>
+            </div>
             <input type="submit" value="Add to basket">
           </form>
         </div>
@@ -209,23 +216,26 @@
         <img src="assets/img/birmingham-tshirt.jpg" class="store-img" />
         <p>SIMPLYHEALTH GREAT BIRMINGHAM 2017 T-SHIRT</p>
         <div class="price-form">
-          <p>£22.50&emsp;<s>£25.00</s></p>
+          <p class="heavy">&pound;22.50&emsp;<s>&pound;25.00</s></p>
           <form>
-            <select>
-              <option value="none">Size</option>
-              <option value="small">Small</option>
-              <option value="medium">Medium</option>
-              <option value="large">Large</option>
-            </select>
-            <select>
-              <option value="none">Quantity</option>
-              <option value="one">1</option>
-              <option value="two">2</option>
-              <option value="three">3</option>
-              <option value="four">4</option>
-              <option value="five">5</option>
-            </select>
-            <br />
+            <div class="select-style">
+              <select>
+                <option value="none">Size</option>
+                  <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+              </select>
+            </div>
+            <div class="select-style">
+              <select>
+                <option value="none">Quantity</option>
+                <option value="one">1</option>
+                <option value="two">2</option>
+                <option value="three">3</option>
+                <option value="four">4</option>
+                <option value="five">5</option>
+              </select>
+            </div>
             <input type="submit" value="Add to basket">
           </form>
         </div>
@@ -235,23 +245,26 @@
         <img src="assets/img/itab-medal.jpg" class="store-img" />
         <p>ITAB MEDAL</p>
         <div class="price-form">
-          <p>£22.50&emsp;<s>£25.00</s></p>
+          <p class="heavy">&pound;22.50&emsp;<s>&pound;25.00</s></p>
           <form>
-            <select>
-              <option value="none">Size</option>
-              <option value="small">Small</option>
-              <option value="medium">Medium</option>
-              <option value="large">Large</option>
-            </select>
-            <select>
-              <option value="none">Quantity</option>
-              <option value="one">1</option>
-              <option value="two">2</option>
-              <option value="three">3</option>
-              <option value="four">4</option>
-              <option value="five">5</option>
-            </select>
-            <br />
+            <div class="select-style">
+              <select>
+                <option value="none">Size</option>
+                  <option value="small">Small</option>
+                <option value="medium">Medium</option>
+                <option value="large">Large</option>
+              </select>
+            </div>
+            <div class="select-style">
+              <select>
+                <option value="none">Quantity</option>
+                <option value="one">1</option>
+                <option value="two">2</option>
+                <option value="three">3</option>
+                <option value="four">4</option>
+                <option value="five">5</option>
+              </select>
+            </div>
             <input type="submit" value="Add to basket">
           </form>
         </div>
