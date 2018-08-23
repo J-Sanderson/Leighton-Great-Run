@@ -1,0 +1,534 @@
+:root {
+  --background: #f9f9f9;
+  --darkblue: #003479;
+  --lightblue: #0d3e80;
+  --darkgreen: #39823c;
+  --lightgreen: #dff0d8;
+  --red: #d43045;
+  --midgrey: #eeeeee;
+  --darkgrey: #a7a7a7;
+}
+
+@font-face {
+    font-family: VisbyCF-Bold;
+    src: url("assets/fonts/VisbyCF-Bold.eot"),
+    url("assets/fonts/VisbyCF-Bold.svg"),
+    url("assets/fonts/VisbyCF-Bold.ttf"),
+    url("assets/fonts/VisbyCF-Bold.woff"),
+    url("assets/fonts/VisbyCF-Bold.woff2");
+}
+
+@font-face {
+    font-family: VisbyCF-Heavy;
+    src: url("assets/fonts/VisbyCF-Heavy.eot"),
+    url("assets/fonts/VisbyCF-Heavy.svg"),
+    url("assets/fonts/VisbyCF-Heavy.ttf"),
+    url("assets/fonts/VisbyCF-Heavy.woff"),
+    url("assets/fonts/VisbyCF-Heavy.woff2");
+}
+
+/* global */
+
+body {
+  background-color: var(--background);
+  font-family: VisbyCF-Bold;
+  font-size: 13px;
+  color: #000;
+  margin: 0;
+}
+
+button, input[type=submit] {
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 14px;
+}
+
+a:link, a:visited {
+  color: var(--lightblue);
+}
+
+i {
+  font-size: 22px;
+}
+
+.white-text {
+  color: #fff;
+}
+
+.grey-text {
+  color: var(--darkgrey);
+}
+
+.heavy {
+  font-family: VisbyCF-Heavy;
+}
+
+/* header */
+
+#upper-header {
+  text-align: center;
+  padding-top: 5px;
+}
+
+#upper-header-right {
+  flex-grow: 1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px;
+}
+
+#logout-btn {
+  background-color: var(--red);
+  color: #fff;
+  width: 150px;
+  height: 50px;
+}
+
+#account-name, #basket {
+  display: flex;
+  align-items: center;
+}
+
+#upper-header-right i, #upper-header-right p {
+  margin: 5px;
+}
+
+#lower-header {
+  background-image:url("assets/img/hero-background.jpg");
+  background-repeat: repeat-x;
+}
+
+#profile-details {
+  text-align: center;
+  padding: 0px 10px;
+}
+
+#profile-img {
+  background-color: #000;
+  border: 2px solid #fff;
+  text-align: center;
+  width: 125px;
+  height: 125px;
+  line-height: 122px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+#edit-profile-img-btn, #update-detail-btn {
+  background-color: var(--darkblue);
+  color: #fff;
+  border: 1px solid #fff;
+  padding: 10px 50px;
+  margin: auto;
+}
+
+#edit-profile-img-btn {
+  margin-bottom: 10px;
+}
+
+#update-detail-btn {
+  background-color: var(--lightblue);
+  display: block;
+  margin-top: 10px;
+}
+
+#contacts-container {
+  display: flex;
+}
+
+#email-details, #phone-details {
+  flex: 1;
+  overflow-wrap: break-word; /* prevent overlap */
+}
+
+/* accordion menu */
+
+header nav {
+  background-color: #fff;
+}
+
+.cd-accordion-menu {
+  list-style-type: none;
+  padding: 0px;
+  margin: 0px;
+}
+
+.cd-accordion-menu input[type=checkbox] {
+  /* hides checkbox, label handles check event instead */
+  position: absolute;
+  opacity: 0;
+}
+
+.cd-accordion-menu label, .cd-accordion-menu i {
+  font-size: 15px;
+  cursor: pointer;
+}
+
+.cd-accordion-menu label, .cd-accordion-menu a {
+  position: relative;
+  display: block;
+  padding: 10px;
+}
+
+.cd-accordion-menu ul {
+  /* by default hide all sub menus */
+  display: none;
+  list-style-type: none;
+  padding: 0px;
+  margin:0px;
+}
+
+.cd-accordion-menu input[type=checkbox]:checked + label + ul,
+.cd-accordion-menu input[type=checkbox]:checked + label:nth-of-type(n) + ul {
+  /* use label:nth-of-type(n) to fix a bug on safari (<= 8.0.8) with multiple adjacent-sibling selectors*/
+  /* show children when item is checked */
+  display: block;
+}
+
+.cd-accordion-menu input[type=checkbox]:checked+label {
+  /* make checked top level items change colour */
+  color: var(--darkblue);
+  border-left: 2px solid var(--darkblue);
+}
+
+/* menu item styling, hover etc */
+.cd-accordion-menu ul li {
+  padding-left: 20px;
+}
+
+.cd-accordion-menu ul li a {
+  color: var(--darkgrey);
+  text-decoration: none;
+}
+
+.cd-accordion-menu ul li:hover {
+  background-color: var(--midgrey);
+}
+
+/* arrows */
+.menu-down {
+  width: 30px;
+  height: 30px;
+  filter:brightness(1000%);
+  margin-top: -5px; /* align with text */
+  float: right;
+}
+
+/* rotate arrow when clicked */
+.cd-accordion-menu input[type=checkbox]:checked+label .menu-down {
+  transform: rotate(180deg);
+}
+
+/* main */
+
+/* run details */
+.run-details-container {
+  border: 1px solid var(--background); /*prevents overflow issue? */
+  border-top: 2px solid var(--darkgrey);
+  text-align: center;
+  padding: 10px;
+}
+
+.countdown {
+  color: #fff;
+  text-align: center;
+  background-image:url("assets/img/hero-background.jpg");
+  width: 120px;
+  height: 120px;
+  margin: auto;
+  display: table;
+}
+
+.countdown p {
+  display: table-cell;
+  vertical-align: middle;
+}
+
+.large-num {
+  display: inline-block;
+  font-size: 40px;
+}
+
+.run-details h2 {
+  font-size: 15px;
+}
+
+.run-details-btn {
+  background-color: var(--darkgreen);
+  color: #fff;
+  width: 150px;
+  height: 50px;
+}
+
+.event-info {
+  background-color: var(--lightgreen);
+  border: 2px solid var(--darkgreen);
+  width: 90%;
+  margin: 10px auto;
+  padding: 10px;
+}
+
+.event-info p {
+  margin: 0px;
+}
+
+/* store */
+#store {
+  border: 1px solid var(--darkgrey);
+  border-bottom: 3px solid var(--darkblue);
+  background-color: #fff;
+  text-align: center;
+  padding: 30px;
+}
+
+.store-item {
+  margin-top: 10px;
+}
+
+.store-img {
+  width: 200px;
+  height: 200px;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.dropdown-container {
+  display: flex;
+  justify-content: center;
+}
+
+/* dropdown styling */
+.select-style select {
+  background: transparent;
+  width: 70px;
+  height: 35px;
+  padding: 10px;
+  border: 0;
+  border-radius: 0;
+  -webkit-appearance:none; /* remove gloss in Safari */
+}
+
+/* dropdown container - most of the styling is here */
+.select-style {
+  /*float: left;*/
+  background-image:url("assets/img/if_ExpandMore_1031518.png");
+  background-repeat: no-repeat;
+  background-position: 90% center;
+  background-size: 10px 10px;
+  border: 1px solid var(--darkgrey);
+  width: 60px;
+  height: 35px;
+  overflow: hidden; /* ensures default arrow doesn not show */
+  margin: 0px 10px;
+}
+
+/* make quantity dropdown wider */
+.select-style:nth-child(2) select {
+  width: 90px;
+}
+
+.select-style:nth-child(2) {
+  width: 80px;
+}
+
+.store-item input[type=submit] {
+  background-color: #fff;
+  border: 2px solid var(--darkblue);
+  color: var(--darkblue);
+  width: 150px;
+  height: 30px;
+  margin-top: 10px;
+}
+
+/* footer */
+
+footer {
+  background-color: var(--darkblue);
+  padding: 10px;
+}
+
+/* fullsize screen */
+
+@media screen and (min-width: 900px) {
+
+  /* header */
+
+  #upper-header {
+    display: flex;
+    text-align: left;
+    margin-left: 40px;
+    padding: 0px;
+  }
+
+  #lower-header {
+    height: 150px;
+    padding-top: 25px;
+    box-sizing: border-box;
+    justify-content: flex-end;
+  }
+
+  #account-name, #basket {
+    margin-left: 20px;
+  }
+
+  #upper-header-right {
+    padding-right: 20px;
+  }
+
+  #upper-header-right i, #upper-header-right p {
+    margin: 10px;
+  }
+
+  header nav {
+    width: 250px;
+    margin-left: 50px;
+    margin-top: 25px;
+    float: left;
+    border-bottom: 2px solid var(--darkgrey);
+  }
+
+  header nav ul { /*temp*/
+    margin: 0;
+  }
+
+  /* profile */
+  #profile-details {
+    float: left;
+    margin-left: 50px;
+    margin-bottom: 20px;
+    width: 60%;
+    display: flex;
+    text-align: left;
+    padding: 0px;
+  }
+
+  #profile-img {
+    width: 200px;
+    height: 200px;
+    line-height: 200px;
+  }
+
+  #edit-profile-img-btn {
+    width: 100%;
+  }
+
+  #profile-detail-container {
+    margin-left: 20px;
+    margin-top: 105px;
+    width: 100%;
+  }
+
+  #update-detail-btn {
+    float: right;
+    margin-top: -18px; /* shift to bottom of header */
+  }
+
+  #email-details, #phone-details {
+    padding-right: 10px;
+  }
+
+  /* main body */
+  main {
+    width: 60%;
+    margin-left: 350px;
+  }
+
+  /* run details */
+  .run-details-container {
+    border-top: 1px solid var(--background);
+    margin-top: 10px;
+    display: flex;
+    text-align: left;
+    padding: 0px;
+  }
+
+  .countdown {
+    width: 150px;
+    height: 150px;
+    margin: 0px;
+    flex: none; /* don't shrink */
+  }
+
+  .run-details {
+    padding: 0px 10px;
+    flex: 1;
+  }
+
+  .run-details h2 {
+    font-size: 13px;
+    margin-top: 0px;
+  }
+
+  .run-details h2:after {
+     background-color: var(--darkblue);
+     bottom: -5px;
+     content: "";
+     display: block;
+     height: 2px;
+     position: relative;
+     width: 30px;
+ }
+
+  .info-btn-container {
+    display: flex;
+    align-items: center;
+  }
+
+  .event-info {
+    max-width: 400px;
+    margin: 0px 10px 0px 0px;
+  }
+
+  .run-details-btn {
+    margin-left: auto;
+    flex: none;
+  }
+
+  /* store */
+  #store {
+    display: flex;
+    justify-content: space-around;
+    text-align: left;
+    margin-top: 40px;
+  }
+
+  .store-item {
+    flex: 1;
+    max-width: 200px;
+    display: flex; /* bottom align order form */
+    flex-direction: column;
+  }
+
+  .store-img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  /* aligns order forms independent of item desc size */
+  .price-form {
+    margin-top: auto;
+  }
+
+  .dropdown-container {
+    justify-content: flex-start;
+  }
+
+  .select-style {
+    margin: 0px 20px 0px 0px;
+  }
+
+  .store-item input[type=submit] {
+    width: 100%;
+  }
+
+  /* footer */
+
+  footer {
+    margin-top: 40px;
+    padding: 20px;
+    border-bottom: 30px solid var(--lightblue);
+  }
+
+}
