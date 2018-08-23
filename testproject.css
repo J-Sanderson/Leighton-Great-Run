@@ -40,7 +40,6 @@ body {
 button, input[type=submit] {
   cursor: pointer;
   font-family: inherit;
-  font-size: 14px;
 }
 
 a:link, a:visited {
@@ -68,6 +67,7 @@ i {
 #upper-header {
   text-align: center;
   padding-top: 5px;
+  border-bottom: 2px solid var(--midgrey);
 }
 
 #upper-header-right {
@@ -81,8 +81,8 @@ i {
 #logout-btn {
   background-color: var(--red);
   color: #fff;
-  width: 150px;
-  height: 50px;
+  width: 120px;
+  height: 40px;
 }
 
 #account-name, #basket {
@@ -161,9 +161,14 @@ header nav {
   opacity: 0;
 }
 
-.cd-accordion-menu label, .cd-accordion-menu i {
+.cd-accordion-menu label,
+.cd-accordion-menu i,
+.cd-accordion-menu li a:link,
+.cd-accordion-menu li a:visited {
   font-size: 15px;
   cursor: pointer;
+  color: #000;
+  text-decoration: none;
 }
 
 .cd-accordion-menu label, .cd-accordion-menu a {
@@ -187,20 +192,19 @@ header nav {
   display: block;
 }
 
+/* make checked top level items change colour */
 .cd-accordion-menu input[type=checkbox]:checked+label {
-  /* make checked top level items change colour */
   color: var(--darkblue);
   border-left: 2px solid var(--darkblue);
 }
 
-/* menu item styling, hover etc */
-.cd-accordion-menu ul li {
-  padding-left: 20px;
-}
-
-.cd-accordion-menu ul li a {
+/* sub-menu styling */
+.cd-accordion-menu ul li,
+.cd-accordion-menu ul li a:link,
+.cd-accordion-menu ul li a:visited {
   color: var(--darkgrey);
-  text-decoration: none;
+  font-size: 13px;
+  padding-left: 20px;
 }
 
 .cd-accordion-menu ul li:hover {
@@ -375,6 +379,7 @@ footer {
 
   #upper-header-right {
     padding-right: 20px;
+    justify-content: flex-end;
   }
 
   #upper-header-right i, #upper-header-right p {
@@ -528,7 +533,17 @@ footer {
   footer {
     margin-top: 40px;
     padding: 20px;
-    border-bottom: 30px solid var(--lightblue);
+    border-bottom: 20px solid var(--lightblue);
+  }
+
+}
+
+/* max sizes for larger screens */
+
+@media screen and (min-width: 1500px) {
+
+  #profile-details, main {
+    width: 900px;
   }
 
 }
