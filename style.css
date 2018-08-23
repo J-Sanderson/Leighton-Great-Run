@@ -29,12 +29,21 @@
 
 /* global */
 
+html {
+  height: 100%;
+  box-sizing: border-box;
+}
+
 body {
   background-color: var(--background);
   font-family: VisbyCF-Bold;
   font-size: 13px;
   color: #000;
   margin: 0;
+  /* sizing/position to keep footer at bottom */
+  position: relative;
+  min-height: 100%;
+  padding-bottom: 45px;
 }
 
 button, input[type=submit] {
@@ -44,10 +53,6 @@ button, input[type=submit] {
 
 a:link, a:visited {
   color: var(--lightblue);
-}
-
-i {
-  font-size: 22px;
 }
 
 .white-text {
@@ -65,17 +70,19 @@ i {
 /* header */
 
 #upper-header {
-  text-align: center;
-  padding-top: 5px;
   border-bottom: 2px solid var(--midgrey);
+  background-image: url("assets/img/logo.svg");
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 75px;
 }
 
 #upper-header-right {
-  flex-grow: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 5px;
+  margin-left: 90px;
 }
 
 #logout-btn {
@@ -83,6 +90,7 @@ i {
   color: #fff;
   width: 120px;
   height: 40px;
+  margin-left: 2px;
 }
 
 #account-name, #basket {
@@ -91,7 +99,7 @@ i {
 }
 
 #upper-header-right i, #upper-header-right p {
-  margin: 5px;
+  margin: 2px;
 }
 
 #lower-header {
@@ -119,7 +127,6 @@ i {
 #edit-profile-img-btn, #update-detail-btn {
   background-color: var(--darkblue);
   color: #fff;
-  border: 1px solid #fff;
   padding: 10px 50px;
   margin: auto;
 }
@@ -129,6 +136,7 @@ i {
 }
 
 #update-detail-btn {
+  border: 2px solid #fff;
   background-color: var(--lightblue);
   display: block;
   margin-top: 10px;
@@ -149,7 +157,7 @@ header nav {
   background-color: #fff;
 }
 
-.cd-accordion-menu {
+.cd-accordion-menu { /* top level ul */
   list-style-type: none;
   padding: 0px;
   margin: 0px;
@@ -161,6 +169,7 @@ header nav {
   opacity: 0;
 }
 
+/* styling for top level items */
 .cd-accordion-menu label,
 .cd-accordion-menu i,
 .cd-accordion-menu li a:link,
@@ -177,8 +186,8 @@ header nav {
   padding: 10px;
 }
 
+/* sub-menu lists, hide by default */
 .cd-accordion-menu ul {
-  /* by default hide all sub menus */
   display: none;
   list-style-type: none;
   padding: 0px;
@@ -242,10 +251,10 @@ header nav {
   width: 120px;
   height: 120px;
   margin: auto;
-  display: table;
+  display: table; /* vertical align text */
 }
 
-.countdown p {
+.countdown p { /* verical alignment for countdown text */
   display: table-cell;
   vertical-align: middle;
 }
@@ -288,7 +297,7 @@ header nav {
 }
 
 .store-item {
-  margin-top: 10px;
+  margin-top: 10px; /* space items in mobile view */
 }
 
 .store-img {
@@ -298,8 +307,9 @@ header nav {
   max-height: 100%;
 }
 
+
 .dropdown-container {
-  display: flex;
+  display: flex; /*keep dropdowns side by side */
   justify-content: center;
 }
 
@@ -324,7 +334,7 @@ header nav {
   border: 1px solid var(--darkgrey);
   width: 60px;
   height: 35px;
-  overflow: hidden; /* ensures default arrow doesn not show */
+  overflow: hidden; /* cuts off default select arrows */
   margin: 0px 10px;
 }
 
@@ -349,41 +359,61 @@ header nav {
 /* footer */
 
 footer {
+  background-image: url("assets/img/logo-white.svg");
+  background-repeat: no-repeat;
+  background-position: 10px center;
+  background-size: 100px;
   background-color: var(--darkblue);
   padding: 10px;
+  height: 25px;
+  /* always position at page bottom */
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
 }
 
-/* fullsize screen */
+/* shift menu on medium sized screens and above */
 
-@media screen and (min-width: 900px) {
-
-  /* header */
+@media screen and (min-width: 600px) {
 
   #upper-header {
-    display: flex;
-    text-align: left;
-    margin-left: 40px;
-    padding: 0px;
+    background-size: 140px;
+    background-position: 40px center;
   }
+
+  #upper-header-right {
+    display: flex;
+    padding-right: 20px;
+    justify-content: flex-end;
+    height: 75px;
+  }
+
+  #account-name, #basket, #logout-btn {
+    margin-left: 20px;
+  }
+
+  #upper-header-right i, #upper-header-right p {
+    margin: 10px;
+  }
+
+  #upper-header-right i {
+    font-size: 22px;
+  }
+
+}
+
+/* desktop style for fullsize screen */
+
+@media screen and (min-width: 950px) {
+
+  /* header */
 
   #lower-header {
     height: 150px;
     padding-top: 25px;
     box-sizing: border-box;
     justify-content: flex-end;
-  }
-
-  #account-name, #basket {
-    margin-left: 20px;
-  }
-
-  #upper-header-right {
-    padding-right: 20px;
-    justify-content: flex-end;
-  }
-
-  #upper-header-right i, #upper-header-right p {
-    margin: 10px;
   }
 
   header nav {
@@ -394,11 +424,8 @@ footer {
     border-bottom: 2px solid var(--darkgrey);
   }
 
-  header nav ul { /*temp*/
-    margin: 0;
-  }
-
   /* profile */
+
   #profile-details {
     float: left;
     margin-left: 50px;
@@ -427,7 +454,7 @@ footer {
 
   #update-detail-btn {
     float: right;
-    margin-top: -18px; /* shift to bottom of header */
+    margin-top: -15px; /* shift to bottom of header */
   }
 
   #email-details, #phone-details {
@@ -458,7 +485,7 @@ footer {
 
   .run-details {
     padding: 0px 10px;
-    flex: 1;
+    flex: 1; /* shrinks/grows instead of countdown */
   }
 
   .run-details h2 {
@@ -466,6 +493,7 @@ footer {
     margin-top: 0px;
   }
 
+  /* partial underline for run name */
   .run-details h2:after {
      background-color: var(--darkblue);
      bottom: -5px;
@@ -476,6 +504,7 @@ footer {
      width: 30px;
  }
 
+  /* aligns run details button and event info if both present */
   .info-btn-container {
     display: flex;
     align-items: center;
@@ -502,7 +531,7 @@ footer {
   .store-item {
     flex: 1;
     max-width: 200px;
-    display: flex; /* bottom align order form */
+    display: flex; /* used to align order form to bottom */
     flex-direction: column;
   }
 
@@ -530,8 +559,12 @@ footer {
 
   /* footer */
 
+  body {
+    /* free space for footer to display */
+    padding-bottom: 100px;
+  }
+
   footer {
-    margin-top: 40px;
     padding: 20px;
     border-bottom: 20px solid var(--lightblue);
   }
@@ -541,6 +574,10 @@ footer {
 /* max sizes for larger screens */
 
 @media screen and (min-width: 1500px) {
+
+  #upper-header-right {
+    width: 1300px;
+  }
 
   #profile-details, main {
     width: 900px;
