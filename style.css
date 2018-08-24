@@ -49,6 +49,7 @@ body {
 button, input[type=submit] {
   cursor: pointer;
   font-family: inherit;
+  border: 0px;
 }
 
 a:link, a:visited {
