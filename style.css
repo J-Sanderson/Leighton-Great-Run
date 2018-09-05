@@ -187,6 +187,15 @@ header nav {
   padding: 10px;
 }
 
+/* hover and selected highlighting for top level items */
+.cd-accordion-menu input[type=checkbox] + label:hover,
+.cd-accordion-menu input[type=checkbox]:checked + label,
+.cd-accordion-menu input[type=checkbox]:focus + label,
+.cd-accordion-menu li a:link:hover,
+.cd-accordion-menu li a:visited:hover {
+  background-color: var(--midgrey);
+}
+
 /* sub-menu lists, hide by default */
 .cd-accordion-menu ul {
   display: none;
