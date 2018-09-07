@@ -70,7 +70,7 @@ a:link, a:visited {
 
 /* header */
 
-#upper-header {
+.upper-header {
   border-bottom: 2px solid var(--midgrey);
   background-image: url("assets/img/logo.svg");
   background-repeat: no-repeat;
@@ -78,7 +78,7 @@ a:link, a:visited {
   background-size: 75px;
 }
 
-#upper-header-right {
+.upper-header-right {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -94,26 +94,27 @@ a:link, a:visited {
   margin-left: 2px;
 }
 
-#account-name, #basket {
+.account-name, .basket {
   display: flex;
   align-items: center;
 }
 
-#upper-header-right i, #upper-header-right p {
+.upper-header-right i, .upper-header-right p {
   margin: 2px;
 }
 
-#lower-header {
+
+.lower-header {
   background-image:url("assets/img/hero-background.jpg");
   background-repeat: repeat-x;
 }
 
-#profile-details {
+.profile-details {
   text-align: center;
   padding: 0px 10px;
 }
 
-#profile-img {
+.profile-img {
   background-color: #000;
   border: 2px solid #fff;
   text-align: center;
@@ -143,11 +144,11 @@ a:link, a:visited {
   margin-top: 10px;
 }
 
-#contacts-container {
+.contacts-container {
   display: flex;
 }
 
-#email-details, #phone-details {
+.email-details, .phone-details {
   flex: 1;
   overflow-wrap: break-word; /* prevent overlap */
 }
@@ -298,7 +299,7 @@ header nav {
 }
 
 /* store */
-#store {
+.store {
   border: 1px solid var(--darkgrey);
   border-bottom: 3px solid var(--darkblue);
   background-color: #fff;
@@ -387,27 +388,27 @@ footer {
 
 @media screen and (min-width: 600px) {
 
-  #upper-header {
+  .upper-header {
     background-size: 140px;
     background-position: 40px center;
   }
 
-  #upper-header-right {
+  .upper-header-right {
     display: flex;
     padding-right: 20px;
     justify-content: flex-end;
     height: 75px;
   }
 
-  #account-name, #basket, #logout-btn {
+  .account-name, .basket, #logout-btn {
     margin-left: 20px;
   }
 
-  #upper-header-right i, #upper-header-right p {
+  .upper-header-right i, #upper-header-right p {
     margin: 10px;
   }
 
-  #upper-header-right i {
+  .upper-header-right i {
     font-size: 22px;
   }
 
@@ -419,7 +420,7 @@ footer {
 
   /* header */
 
-  #lower-header {
+  .lower-header {
     height: 150px;
     padding-top: 25px;
     box-sizing: border-box;
@@ -436,7 +437,7 @@ footer {
 
   /* profile */
 
-  #profile-details {
+  .profile-details {
     float: left;
     margin-left: 50px;
     margin-bottom: 20px;
@@ -446,7 +447,7 @@ footer {
     padding: 0px;
   }
 
-  #profile-img {
+  .profile-img {
     width: 200px;
     height: 200px;
     line-height: 200px;
@@ -456,7 +457,7 @@ footer {
     width: 100%;
   }
 
-  #profile-detail-container {
+  .profile-detail-container {
     margin-left: 20px;
     margin-top: 105px;
     width: 100%;
@@ -467,7 +468,7 @@ footer {
     margin-top: -15px; /* shift to bottom of header */
   }
 
-  #email-details, #phone-details {
+  .email-details, .phone-details {
     padding-right: 10px;
   }
 
@@ -531,7 +532,7 @@ footer {
   }
 
   /* store */
-  #store {
+  .store {
     display: flex;
     justify-content: space-around;
     text-align: left;
@@ -585,11 +586,11 @@ footer {
 
 @media screen and (min-width: 1500px) {
 
-  #upper-header-right {
+  .upper-header-right {
     width: 1300px;
   }
 
-  #profile-details, main {
+  .profile-details, main {
     width: 900px;
   }
 
